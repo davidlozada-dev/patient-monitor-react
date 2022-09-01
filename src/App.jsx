@@ -15,7 +15,9 @@ function App() {
 	useEffect(() => {
 		const getLocalStorage = () => {
 			const localStoragePatients = JSON.parse(localStorage.getItem("patients"));
-			localStoragePatients.length > 0 && setPatients(localStoragePatients);
+			if(localStoragePatients.length > 0){
+				setPatients(localStoragePatients);
+			}
 		}
 		getLocalStorage();
 	}, []);
